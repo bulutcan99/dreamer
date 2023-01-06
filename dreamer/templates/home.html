@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} ANASAYFA {% endblock %}
+{% block content %}
+
+<div class="container pt-3">
+    <div class="d-flex my-3">
+        {% if not me %}
+        <a class = "btn btn-primary mx-1" href="/login">Giriş yapınız.</a>
+        <a class = "btn btn-secondary mx-3" href="/register">Kaydolunuz.</a>
+        {% else %}
+        <a class = "btn btn-primary mx-1" >{{name}}</a>
+        <a class = "btn btn-primary mx-2" href="/create">Hayalini Yazınız.</a>
+        <a class = "btn btn-primary mx-2" href = "/profile">Profilinize Gidin.</a>
+        <a class = "btn btn-danger pt-3" href="/logout">Çıkış Yap.</a>
+        {% endif %}
+    </div>
+
+    {% for d in dreams %}
+    <div class="card mb-3">
+      <div class="card-header">
+          {{ d[0]}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ d[1].quote }}</h5>
+        <p class="card-text">{{ d[1].dream }}</p>
+        <a href="#" class="btn btn-primary">Detaylı İnceleme</a>
+      </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

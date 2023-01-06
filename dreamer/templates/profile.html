@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Profile Page {% endblock %}
+{% block content %}
+
+<div class="container pt-3">
+<a class = "btn btn-primary mx-1" href="/">Anasayfa</a>
+<a class = "btn btn-danger pt-3" href="/logout">Çıkış Yap.</a>
+<br>
+<br>
+    {% for d in dreams %}
+    <div class="card mb-3">
+      <div class="card-header">
+          {{ d.user_id}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ d.quote }}</h5>
+        <p class="card-text">{{ d.dream }}</p>
+        <a href="#" class="btn btn-primary">Detaylı İnceleme</a>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

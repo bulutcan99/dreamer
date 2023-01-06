@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %} CREATE {% endblock %}
+{% block content %}
+
+<section style="background-color: blueviolet; height: 100vh;">
+    <div class="container" style="height: 100%;">
+        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+            <form action="" method="POST">
+                <label style="font-size: 2rem;" for="dream">Hayalin Ne? </label> <br>
+                <input style="font-size: 2rem;" type="text" name="dream"> <br>
+                <label style="font-size: 2rem;" for="surname">Detay</label> <br>
+                <textarea name="" cols="50" rows="10" name="detail"></textarea> <br>
+                <label style="font-size: 2rem;" for="email">Bize bir motivasyon sözü bırak</label> <br>
+                <input style="font-size: 2rem;" type="text" name="quote"> <br><br>
+                <button class="btn btn-primary" style="font-size: 2rem;" type="submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
